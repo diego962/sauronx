@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de cliente{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <form action="{{ url_for('web.cliente_cadastro') }}" method="post">
+      <fieldset id="dados_empresa">
+      <legend>Cadastro de cliente</legend>
+        <div class="mb-3">
+          <label for="empresa" class="form-label">Nome da empresa</label>
+          <input type="text" id="empresa" name="empresa" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="empresa_id" class="form-label">Empresa ID</label>
+          <input type="text" id="empresa_id" name="empresa_id" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="qtd_contatos">Quantidade de contatos: </label>
+          <select class="form-select" id="qtd_contatos" name="qtd_contatos" onchange="build_form_contact()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="mb-3" id="contatos">
+        </div>
+      </fieldset>
+      <input class="btn btn-primary" type="submit" value="Cadastrar">
+    </form>
+  </div>
+{% endblock %}

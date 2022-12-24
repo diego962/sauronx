@@ -1,0 +1,5 @@
+[default]
+debug = true
+
+[development]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'

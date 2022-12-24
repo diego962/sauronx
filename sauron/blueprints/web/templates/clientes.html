@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div>
+    <nav class="navbar navbar-light">
+      <li><a class="navbar-brand" href="{{ url_for('web.cliente_cadastro') }}">Cadastrar Cliente</a></li>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+<div class="list-group">
+  {% for empresa in empresas %}
+    <a
+      class="list-group-item list-group-item-action"
+      href="{{ url_for('web.cliente_info', empresa_id=empresa.empresa_id) }}">
+      {{ empresa.empresa_nome }}
+    </a>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

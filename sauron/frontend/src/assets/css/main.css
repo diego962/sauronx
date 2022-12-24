@@ -1,0 +1,49 @@
+#item-nome{
+  background-color: #0d6efd;
+  color:#fff;
+  border-color: #0d6efd;
+}
+
+.optList {
+  list-style-type: none;
+}
+
+.adicionar {
+  color: green;
+  position: relative;
+  left: auto;
+  width: 100px;
+  height: 40px;
+}
+
+.ajuda {
+  color: #0d6efd;
+  position: relative;
+  left: auto;
+  width: 70px;
+  height: 30px;
+}
+
+.opt {
+  position: relative;
+  margin-left: 20px;
+}
+
+.lista-variaveis {
+  height: 100px;
+  width: 200px;
+}
+.switch-tarefas {
+  position: relative;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.card-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  height: 100vh;
+}
+.card-dashboard-item {
+  margin: 10%;
+}

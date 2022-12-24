@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form action="#">
+    <fieldset id="dados_empresa">
+    <legend>Informações do cliente</legend>
+      <div class="mb-3">
+        <label for="empresa" class="form-label">Nome da empresa</label>
+        <input
+              type="text" id="empresa"
+              name="empresa" class="form-control"
+              readonly="readonly"
+              value="{{cliente_info.empresa.empresa_nome}}">
+      </div>
+      <div class="mb-3">
+        <label for="empresa_id" class="form-label">Empresa ID</label>
+        <input
+              type="text" id="empresa_id"
+              name="empresa_id" class="form-control"
+              readonly="readonly"
+              value="{{cliente_info.empresa.empresa_id}}">
+      </div>
+      <div class="mb-3">
+        <table class="table table-hover" style="text-align:center">
+          <thead>
+            <tr>
+              <th colspan="3" >Contatos disponíveis</th>
+            </tr>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Telefone</th>
+            <tr>
+          </thead>
+          <tbody>
+            {% for contato in cliente_info.contatos %}
+              <tr>
+                <td>{{contato.contato_nome}}</td>
+                <td>{{contato.contato_email}}</td>
+                <td>{{contato.contato_telefone}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
